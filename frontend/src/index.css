@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-slate-955: #0b0f19;
+  --color-slate-850: #161e2e;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 transition-colors duration-300 antialiased selection:bg-indigo-500 selection:text-white;
+  }
+
+  body.dark {
+    @apply bg-slate-955 text-slate-100;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-sm transition-all duration-300;
+}
+
+.dark .glass-panel {
+  @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/40 shadow-none;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-lg border border-slate-200/60 rounded-2xl shadow-xl shadow-slate-100/40 hover:shadow-indigo-500/5 transition-all duration-300;
+}
+
+.dark .glass-card {
+  @apply bg-slate-900/70 backdrop-blur-lg border border-slate-800/60 rounded-2xl shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300;
+}
+
+.glass-input {
+  @apply bg-slate-100/50 border border-slate-200 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500/20 rounded-xl px-4 py-2.5 transition-all duration-200 outline-none;
+}
+
+.dark .glass-input {
+  @apply bg-slate-950/40 border border-slate-800/80 focus:border-indigo-500 focus:bg-slate-950/80 focus:ring-2 focus:ring-indigo-500/20 rounded-xl px-4 py-2.5 transition-all duration-200 outline-none text-slate-100;
+}
+
+/* Custom Webkit scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300/80 rounded-full transition-colors;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-slate-800/80;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-700;
+}
+
+/* Premium gradient overlay animation */
+@keyframes gradient-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-bg 8s ease infinite;
+}
+
+/* Custom button gradient presets */
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all duration-200 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-medium transition-all duration-200 active:scale-95 shadow-sm;
+}
+
+.dark .btn-secondary {
+  @apply bg-slate-900 hover:bg-slate-850 text-slate-300 border border-slate-800 transition-all duration-200 active:scale-95 shadow-none;
+}
+
