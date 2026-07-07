@@ -244,7 +244,7 @@ const DashboardPage = () => {
               <span className="block text-[10px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-widest mb-2">
                 Playback Player
               </span>
-              <AudioPlayer audioUrl={`http://localhost:5000${analysisData.audio_path}`} />
+              <AudioPlayer audioUrl={`https://speechanalytics-backend.onrender.com${analysisData.audio_path}`} />
             </div>
 
             {/* Core Metrics Row */}
