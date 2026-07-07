@@ -5,7 +5,7 @@ from utils.helpers import allowed_file, json_response, sanitize_filename
 
 upload_bp = Blueprint("upload", __name__)
 
-@upload_bp.route("/upload", methods=["POST"])
+@upload_bp.route("/upload", methods=["POST", "OPTIONS"])
 def upload_audio():
     """Upload audio file endpoint."""
     # Check if file is in request
